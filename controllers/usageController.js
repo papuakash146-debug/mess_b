@@ -1,4 +1,8 @@
 import Usage from "../models/Usage.js";
+import mongoose from "mongoose";
+
+
+
 
 // Add Daily Usage
 export const addUsage = async (req, res) => {
@@ -42,7 +46,9 @@ export const get30DaysReport = async (req, res) => {
     res.json({
       totalUsed: report[0]?.totalUsed || 0
     });
+
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 };
+
